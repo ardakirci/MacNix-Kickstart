@@ -14,6 +14,13 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.vim
+          pkgs.lldb
+          pkgs.nil
+          pkgs.vscode
+#          pkgs.mongodb
+#          pkgs.mongosh
+#          pkgs.mongodb-tools
+#          pkgs.mongodb-compass
         ];
 
       # Auto upgrade nix package and the daemon service.
@@ -36,7 +43,8 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "x86_64-darwin";
-    };
+      nixpkgs.config.allowUnfree = true;
+        };
   in
   {
     # Build darwin flake using:
