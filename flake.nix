@@ -16,7 +16,6 @@
         [ pkgs.vim
           pkgs.lldb
           pkgs.nil
-          pkgs.vscode
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
@@ -50,7 +49,10 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Ardas-MacBook-Pro
     darwinConfigurations."Ardas-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [ 
+        configuration
+        ./modules/brew.nix            
+      ];
     };
 
     # Expose the package set, including overlays, for convenience.
