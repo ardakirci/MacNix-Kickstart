@@ -15,9 +15,19 @@ homebrew = {
         # `brew install --cask`
     
     casks = [
+      #"firefox"
+      #"spotify"
+      #"qbittorrent"
+      #"coconutbattery"
+      #"mullvadvpn"
       "mongodb-compass"
       "wezterm"
       "visual-studio-code"
+      #"zed"
+      #"postman"
+      #"gitkraken"
+      #"clion"
+      
     ];
   };
 }
