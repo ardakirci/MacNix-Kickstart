@@ -15,7 +15,8 @@ homebrew = {
         # `brew install --cask`
     
     casks = [
-     "mongodb-compass"
+      "mongodb-compass"
+      "wezterm"
             # "google-chrome"
     ];
   };
