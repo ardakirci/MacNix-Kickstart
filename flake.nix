@@ -16,6 +16,9 @@
         [ pkgs.vim
           pkgs.lldb
           pkgs.nil
+          pkgs.neofetch
+          pkgs.eza
+          pkgs.fzf
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
