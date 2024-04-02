@@ -13,7 +13,7 @@
   };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs,... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -52,30 +52,18 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.config.allowUnfree = true;
-      nixpkgs.overlays = [
-        (final: prev: {
-          sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {
-            pname = "sf-mono-liga-bin";
-            version = "dev";
-            src = inputs.sf-mono-liga-src;
-            dontConfigure = true;
-            installPhase = ''
-              mkdir -p $out/share/fonts/opentype
-              cp -R $src/*.otf $out/share/fonts/opentype/
-            '';
-          };
-        }) 
-      ];
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Ardas-MacBook-Pro
     darwinConfigurations."Ardas-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      specialArgs = { inherit inputs; };
       modules = [ 
         configuration
         ./modules/brew.nix 
         ./fonts/sfmononerd.nix
+        (import ./overlays)
       ];
     };
 
