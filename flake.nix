@@ -2,18 +2,23 @@
   description = "Example Darwin system flake";
 
   inputs = {
+    #nix packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #darwin
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
      
        # SFMono w/ patches
     sf-mono-liga-src = {
-    url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
-    flake = false;
-  };
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
+    # icons
+    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";    
+  
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs,... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, darwin-custom-icons, ... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -52,7 +57,9 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.config.allowUnfree = true;
-    };
+      
+      
+     };
   in
   {
     # Build darwin flake using:
@@ -64,6 +71,9 @@
         ./modules/brew.nix 
         ./fonts/sfmononerd.nix
         (import ./overlays)
+
+        darwin-custom-icons.darwinModules.default
+        (import ./icons)
       ];
     };
 
