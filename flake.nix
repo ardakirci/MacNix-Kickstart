@@ -14,22 +14,26 @@
       flake = false;
     };
     # icons
-    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";    
+    # darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";    
   
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, darwin-custom-icons, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.vim
+        [
+          pkgs.vim
           pkgs.lldb
           pkgs.nil
           pkgs.neofetch
           pkgs.eza
           pkgs.fzf
+          pkgs.helix
+          pkgs.neovim
+          
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
@@ -72,8 +76,9 @@
         ./fonts/sfmononerd.nix
         (import ./overlays)
 
-        darwin-custom-icons.darwinModules.default
-        (import ./icons)
+        #iconlar bozuk
+        #darwin-custom-icons.darwinModules.default
+        #(import ./icons)
       ];
     };
 

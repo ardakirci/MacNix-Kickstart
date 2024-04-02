@@ -17,7 +17,7 @@ homebrew = {
     casks = [
       "mongodb-compass"
       "wezterm"
-            # "google-chrome"
+      "visual-studio-code"
     ];
   };
 }
