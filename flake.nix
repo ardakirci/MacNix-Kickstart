@@ -7,15 +7,15 @@
     #darwin
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-     
+
        # SFMono w/ patches
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
     # icons
-    # darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";    
-  
+    # darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
@@ -23,17 +23,17 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
+      environment.systemPackages = with pkgs;
         [
-          pkgs.vim
-          pkgs.lldb
-          pkgs.nil
-          pkgs.neofetch
-          pkgs.eza
-          pkgs.fzf
-          pkgs.helix
-          pkgs.neovim
-          
+          vim
+          lldb
+          nil
+          neofetch
+          eza
+          fzf
+          helix
+          neovim
+
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
@@ -61,8 +61,8 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.config.allowUnfree = true;
-      
-      
+
+
      };
   in
   {
@@ -70,9 +70,9 @@
     # $ darwin-rebuild build --flake .#Ardas-MacBook-Pro
     darwinConfigurations."Ardas-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit inputs; };
-      modules = [ 
+      modules = [
         configuration
-        ./modules/brew.nix 
+        ./modules/brew.nix
         ./fonts/sfmononerd.nix
         (import ./overlays)
 

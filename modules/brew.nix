@@ -11,9 +11,9 @@ homebrew = {
     };
 
     # `brew install`
-    
+
         # `brew install --cask`
-    
+
     casks = [
       #"firefox"
       #"spotify"
@@ -23,11 +23,11 @@ homebrew = {
       "mongodb-compass"
       "wezterm"
       "visual-studio-code"
-      #"zed"
+      "zed"
       #"postman"
       #"gitkraken"
       #"clion"
-      
+
     ];
   };
 }
