@@ -1,5 +1,9 @@
 {pkgs, ...}: {
   fonts = {
-    fonts = with pkgs; [ sf-mono-liga-bin ];
+    fontDir.enable = true;
+    fonts = with pkgs; [ 
+      sf-mono-liga-bin
+      (nerdfonts.override { fonts = [ "Hack" ]; }) 
+    ];
   };
 }

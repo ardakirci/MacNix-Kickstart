@@ -33,7 +33,8 @@
           fzf
           helix
           neovim
-
+          gnupg
+          tmux
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
