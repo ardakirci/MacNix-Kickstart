@@ -35,6 +35,7 @@
           neovim
           gnupg
           tmux
+          lua-language-server
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
