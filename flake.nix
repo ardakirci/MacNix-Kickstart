@@ -36,6 +36,8 @@
           gnupg
           tmux
           lua-language-server
+          zoxide
+          fd
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
