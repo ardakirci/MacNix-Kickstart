@@ -25,19 +25,29 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs;
         [
+          # text editor
           vim
-          lldb
-          nil
+          neovim
+          helix
+cmake
+          # terminal paketleri
           neofetch
           eza
           fzf
-          helix
-          neovim
           gnupg
-          tmux
-          lua-language-server
+          tmux          
           zoxide
           fd
+          ripgrep
+          
+          # diller
+          lldb
+          nil
+          lua
+          lua-language-server
+          typescript
+          nodePackages.typescript-language-server
+          jdk
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools

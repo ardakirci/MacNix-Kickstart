@@ -20,7 +20,6 @@ homebrew = {
       #"qbittorrent"
       #"coconutbattery"
       #"mullvadvpn"
-      "mongodb-compass"
       "wezterm"
       "visual-studio-code"
       "zed"
