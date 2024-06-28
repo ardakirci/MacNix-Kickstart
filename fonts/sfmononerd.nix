@@ -1,7 +1,7 @@
 {pkgs, ...}: {
-  packages = {
+  fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [ 
+    packages = with pkgs; [ 
       sf-mono-liga-bin
       (nerdfonts.override { fonts = [ "Hack" ]; }) 
     ];
