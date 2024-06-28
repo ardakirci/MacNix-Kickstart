@@ -29,7 +29,8 @@
           vim
           neovim
           helix
-cmake
+          cmake
+          emacs
           # terminal paketleri
           neofetch
           eza

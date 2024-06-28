@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  fonts = {
+  packages = {
     fontDir.enable = true;
     fonts = with pkgs; [ 
       sf-mono-liga-bin
