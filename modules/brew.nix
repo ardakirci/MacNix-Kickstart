@@ -27,6 +27,8 @@ homebrew = {
       "clion"
       "tor-browser"
       "arc"
+      "chromium"
+      "via"
       
 
     ];

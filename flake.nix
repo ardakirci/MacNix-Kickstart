@@ -40,7 +40,8 @@
           zoxide
           fd
           ripgrep
-          
+          bat
+          tree          
           # diller
           lldb
           nil
@@ -49,6 +50,8 @@
           typescript
           nodePackages.typescript-language-server
           jdk
+          luajitPackages.luarocks
+
 #          pkgs.mongodb
 #          pkgs.mongosh
 #          pkgs.mongodb-tools
