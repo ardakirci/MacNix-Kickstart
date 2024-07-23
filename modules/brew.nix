@@ -2,7 +2,7 @@
 homebrew = {
     enable = true;
 
-    brewPrefix = "/Users/arda/homebrew/bin";
+    brewPrefix = "/Users/arda/nix/brewlib/homebrew/bin";
 
     onActivation = {
       autoUpdate = false;
