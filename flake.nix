@@ -47,15 +47,11 @@
           nil
           lua
           lua-language-server
-          typescript
-          nodePackages.typescript-language-server
+
+
           jdk
           luajitPackages.luarocks
 
-#          pkgs.mongodb
-#          pkgs.mongosh
-#          pkgs.mongodb-tools
-#          pkgs.mongodb-compass
         ];
 
       # Auto upgrade nix package and the daemon service.

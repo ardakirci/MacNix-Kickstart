@@ -2,7 +2,7 @@
 homebrew = {
     enable = true;
 
-    brewPrefix = "/Users/arda/nix/brewlib/homebrew/bin";
+    brewPrefix = "/Users/arda/nix/homebrew/bin";
 
     onActivation = {
       autoUpdate = false;
@@ -15,6 +15,7 @@ homebrew = {
         # `brew install --cask`
 
     casks = [
+      "iterm2@nightly"
       "firefox"
       "spotify"
       "qbittorrent"
