@@ -44,9 +44,7 @@
           tree          
           # diller
           lldb
-          nil
-          lua
-          lua-language-server
+          cargo
 
 
           jdk
@@ -75,6 +73,9 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.config.allowUnfree = true;
+
+      # Sudo touchID enable
+      security.pam.enableSudoTouchIdAuth = true;
 
 
      };
