@@ -15,6 +15,7 @@ homebrew = {
         # `brew install --cask`
 
     casks = [
+      "whatsapp"
       "iterm2@nightly"
       "firefox"
       "spotify"
