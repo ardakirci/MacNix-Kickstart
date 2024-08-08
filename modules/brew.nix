@@ -31,6 +31,7 @@ homebrew = {
       "arc"
       "chromium"
       "via"
+      "qmk-toolbox"
       
 
     ];

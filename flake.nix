@@ -13,9 +13,8 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-    # icons
-    # darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
-
+# icons
+    #darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
@@ -41,11 +40,12 @@
           fd
           ripgrep
           bat
-          tree          
+          tree
+          fastfetch
           # diller
           lldb
           cargo
-
+          gdb
 
           jdk
           luajitPackages.luarocks
@@ -62,7 +62,13 @@
       # Create /etc/zshrc that loads the nix-darwin environment.
       programs.zsh.enable = true;  # default shell on catalina
       # programs.fish.enable = true;
-
+      
+      system.keyboard = {
+        
+        enableKeyMapping = true;
+        remapCapsLockToEscape = true;
+      };
+      # system.keyboard.remapCapsLockToControl = true;
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
@@ -90,10 +96,10 @@
         ./modules/brew.nix
         ./fonts/sfmononerd.nix
         (import ./overlays)
-
+        
         #iconlar bozuk
-        #darwin-custom-icons.darwinModules.default
-        #(import ./icons)
+       # darwin-custom-icons.darwinModules.default
+#        (import ./icons)
       ];
     };
 
