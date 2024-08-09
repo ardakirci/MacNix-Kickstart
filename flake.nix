@@ -7,8 +7,15 @@
     #darwin
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    
 
-       # SFMono w/ patches
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+
+    # SFMono w/ patches
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
@@ -17,7 +24,7 @@
     #darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -82,9 +89,25 @@
 
       # Sudo touchID enable
       security.pam.enableSudoTouchIdAuth = true;
+      users.users."arda" = {
+        home = "/Users/arda";
+      };
 
+    };
+    homeconfig = {pkgs, ...}: {
+      # this is internal compatibility configuration 
+      # for home-manager, don't change this!
+      home.stateVersion = "24.05";
+      # Let home-manager install and manage itself.
+      programs.home-manager.enable = true;
 
-     };
+      home.packages = with pkgs; [];
+
+      home.sessionVariables = {
+        EDITOR = "nvim";
+      };
+
+    };
   in
   {
     # Build darwin flake using:
@@ -93,6 +116,12 @@
       specialArgs = { inherit inputs; };
       modules = [
         configuration
+        home-manager.darwinModules.home-manager  {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.verbose = true;
+          home-manager.users.arda = homeconfig;
+        }
         ./modules/brew.nix
         ./fonts/sfmononerd.nix
         (import ./overlays)

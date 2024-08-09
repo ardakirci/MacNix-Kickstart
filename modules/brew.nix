@@ -32,8 +32,20 @@ homebrew = {
       "chromium"
       "via"
       "qmk-toolbox"
-      
+      "steam"
 
     ];
+/*
+    masApps =  {
+ #     Xcode = 497799835;
+      "Focus for YouTube" = 1514703160;
+      "AdGuard for Safari" = 1440147259;
+      "Microsoft Word" = 462054704;
+      "Microsoft PowerPoint" = 462062816;
+      "Microsoft Excel" = 462058435;
+      Keynote = 409183694;
+      Numbers = 409203825;
+      Pages = 409201541;
+    }; */
   };
 }
