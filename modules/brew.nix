@@ -2,7 +2,7 @@
 homebrew = {
     enable = true;
 
-    brewPrefix = "/Users/arda/nix/homebrew/bin";
+    brewPrefix = "/Users/arda/homebrew/bin";
 
     onActivation = {
       autoUpdate = false;
@@ -22,7 +22,8 @@ homebrew = {
       "qbittorrent"
       "coconutbattery"
       "mullvadvpn"
-      "wezterm"
+#     "wezterm"
+      "wezterm@nightly"
       "visual-studio-code"
       "zed"
       "gitkraken"
@@ -33,7 +34,11 @@ homebrew = {
       "via"
       "qmk-toolbox"
       "steam"
-
+      "discord"
+      "zoom"
+      "postman"
+      "kitty"
+      "emacs"
     ];
 /*
     masApps =  {

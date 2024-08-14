@@ -2,48 +2,51 @@
   description = "Example Darwin system flake";
 
   inputs = {
+    
     #nix packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #darwin
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     
-
+    #darwin
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    # home
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-
     # SFMono w/ patches
     sf-mono-liga-src = {
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-# icons
-    #darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+    
+    # icons
+    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, darwin-custom-icons,... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs;
         [
+
           # text editor
           vim
-          neovim
           helix
           cmake
-          emacs
+
           # terminal paketleri
           neofetch
           eza
           fzf
           gnupg
           tmux          
-          zoxide
           fd
           ripgrep
           bat
@@ -56,7 +59,8 @@
 
           jdk
           luajitPackages.luarocks
-
+          nodejs
+          pnpm
         ];
 
       # Auto upgrade nix package and the daemon service.
@@ -94,21 +98,7 @@
       };
 
     };
-    homeconfig = {pkgs, ...}: {
-      # this is internal compatibility configuration 
-      # for home-manager, don't change this!
-      home.stateVersion = "24.05";
-      # Let home-manager install and manage itself.
-      programs.home-manager.enable = true;
-
-      home.packages = with pkgs; [];
-
-      home.sessionVariables = {
-        EDITOR = "nvim";
-      };
-
-    };
-  in
+ in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Ardas-MacBook-Pro
@@ -119,16 +109,15 @@
         home-manager.darwinModules.home-manager  {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.verbose = true;
-          home-manager.users.arda = homeconfig;
+          home-manager.verbose = false;
+          home-manager.users.arda = ./modules/home.nix;
         }
         ./modules/brew.nix
         ./fonts/sfmononerd.nix
         (import ./overlays)
         
-        #iconlar bozuk
-       # darwin-custom-icons.darwinModules.default
-#        (import ./icons)
+        darwin-custom-icons.darwinModules.default
+        (import ./icons)
       ];
     };
 
