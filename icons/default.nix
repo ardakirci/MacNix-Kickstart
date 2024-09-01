@@ -51,6 +51,10 @@
         path = "/Applications/Visual\ Studio\ Code.app";
         icon = ./vscode.icns;
       }
+      {
+        path = "/Applications/Arc.app";
+        icon = ./arc.icns;
+      }
     ];
   };
 }

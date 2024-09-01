@@ -42,7 +42,6 @@
           enable = true;
           autosuggestion.enable = true;
           syntaxHighlighting.enable = true;
-          historySubstringSearch.enable = true;
           initExtra = builtins.readFile ./zshrc;
 
        };
@@ -50,7 +49,7 @@
         # p10k alternative prompt
         oh-my-posh = {
           enable = true;
-          useTheme = "atomic";
+#          useTheme = "atomic";
           enableZshIntegration = true;
           settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./atomic.json));
         };

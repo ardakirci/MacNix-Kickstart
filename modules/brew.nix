@@ -13,6 +13,10 @@ homebrew = {
     # `brew install`
 
         # `brew install --cask`
+    taps = [
+      "nikitabobko/aerospace"
+    ];
+
 
     casks = [
       "whatsapp"
@@ -36,9 +40,10 @@ homebrew = {
       "steam"
       "discord"
       "zoom"
-      "postman"
       "kitty"
       "emacs"
+      "aerospace"
+      "ollama"
     ];
 /*
     masApps =  {
