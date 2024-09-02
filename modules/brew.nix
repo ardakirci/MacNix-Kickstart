@@ -11,7 +11,9 @@ homebrew = {
     };
 
     # `brew install`
-
+/*    brews = [
+      "llvm"
+    ]; */
         # `brew install --cask`
     taps = [
       "nikitabobko/aerospace"

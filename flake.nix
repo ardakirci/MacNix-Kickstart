@@ -54,6 +54,8 @@
           fastfetch
           # diller
           nil
+#          llvmPackages.lldb
+          lldb
           cargo
           gdb
           taplo
