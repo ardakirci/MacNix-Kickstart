@@ -45,7 +45,7 @@ homebrew = {
       "kitty"
       "emacs"
       "aerospace"
-      "ollama"
+      "orion"
     ];
 /*
     masApps =  {

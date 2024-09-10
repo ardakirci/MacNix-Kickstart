@@ -43,7 +43,6 @@
 
           # terminal paketleri
           neofetch
-          eza
           fzf
           gnupg
           tmux          
@@ -52,9 +51,10 @@
           bat
           tree
           fastfetch
+          gnutar
+
           # diller
           nil
-#          llvmPackages.lldb
           lldb
           cargo
           gdb
@@ -62,12 +62,10 @@
           jdk
           luajitPackages.luarocks
           nodejs
-          pnpm
-          # window
-          jankyborders
+          racket
 
           # LLM
-#          ollama
+          ollama
 
         ];
 
