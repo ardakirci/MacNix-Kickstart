@@ -1,5 +1,5 @@
 
- {pkgs, ...}: {
+ {pkgs, config, ...}: {
       # this is internal compatibility configuration 
       # for home-manager, don't change this!
       home.stateVersion = "24.05";
@@ -19,6 +19,14 @@
 /*      home.sessionVariables = {
         EDITOR = "nvim";
       }; */
+
+      
+      home.file = {
+        ".config/helix" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/Users/arda/nix/dotfiles/helix";
+          recursive = true;
+        };
+      };
 
       programs = {
         
