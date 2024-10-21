@@ -37,12 +37,10 @@
         [
 
           # text editor
-          vim
           helix
           cmake
 
           # terminal paketleri
-          neofetch
           fzf
           gnupg
           tmux          
@@ -62,10 +60,10 @@
           jdk
           luajitPackages.luarocks
           nodejs
-          racket
+
 
           # LLM
-          ollama
+
 
         ];
 
@@ -101,8 +99,8 @@
 
       # Sudo touchID enable
       security.pam.enableSudoTouchIdAuth = true;
-      users.users."arda" = {
-        home = "/Users/arda";
+      users.users."ardak" = {
+        home = "/Users/ardak";
       };
 
     };
@@ -118,7 +116,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.verbose = false;
-          home-manager.users.arda = ./modules/home.nix;
+          home-manager.users.ardak = ./modules/home.nix;
         }
         ./modules/brew.nix
         ./fonts/sfmononerd.nix
