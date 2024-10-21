@@ -1,6 +1,6 @@
 path+=('/Applications/WezTerm.app/Contents/MacOS/')
 path+=('/Applications/Emacs.app/Contents/MacOS/')
-path+=('/Users/arda/miniforge3/condabin/')
+#path+=('/Users/ardak/miniforge3/condabin/')
 [ -n "$WEZTERM_PANE" ] && export NVIM_LISTEN_ADDRESS="/tmp/nvim$WEZTERM_PANE"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
