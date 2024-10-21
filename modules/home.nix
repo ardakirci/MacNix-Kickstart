@@ -23,7 +23,11 @@
       
       home.file = {
         ".config/helix" = {
-          source = config.lib.file.mkOutOfStoreSymlink "/Users/arda/nix/dotfiles/helix";
+          source = config.lib.file.mkOutOfStoreSymlink "/Users/ardak/nix/dotfiles/helix";
+          recursive = true;
+        };
+        ".config/wezterm" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/Users/ardak/nix/dotfiles/wezterm";
           recursive = true;
         };
       };
