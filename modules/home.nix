@@ -30,6 +30,10 @@
           source = config.lib.file.mkOutOfStoreSymlink "/Users/ardak/nix/dotfiles/wezterm";
           recursive = true;
         };
+        ".config/aerospace" = {
+          source = config.lib.file.mkOutOfStoreSymlink "/Users/ardak/nix/dotfiles/aerospace";
+          recursive = true;
+        };
       };
 
       programs = {
