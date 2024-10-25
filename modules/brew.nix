@@ -42,10 +42,11 @@ homebrew = {
       "steam"
       "discord"
       "zoom"
-      "kitty"
+#      "kitty"
       "emacs"
       "aerospace"
-      "orion"
+      "wireshark"
+#      "orion"
     ];
 /*
     masApps =  {

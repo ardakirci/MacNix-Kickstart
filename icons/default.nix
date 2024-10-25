@@ -52,8 +52,8 @@
         icon = ./vscode.icns;
       }
       {
-        path = "/Applications/Arc.app";
-        icon = ./arc.icns;
+        path = "/Applications/Wireshark.app";
+        icon = ./wireshark.icns;
       }
     ];
   };
