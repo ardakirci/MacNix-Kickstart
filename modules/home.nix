@@ -14,6 +14,13 @@
         lsd
         yazi
         zsh-powerlevel10k
+        #python3
+
+        (python3.withPackages (python-pkgs: with python-pkgs; [
+          # select Python packages here
+          python-lsp-server
+         ]))
+
       ];
 
 /*      home.sessionVariables = {

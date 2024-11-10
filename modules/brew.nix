@@ -1,4 +1,4 @@
- {
+{
 homebrew = {
     enable = true;
 
@@ -42,11 +42,12 @@ homebrew = {
       "steam"
       "discord"
       "zoom"
-#      "kitty"
       "emacs"
       "aerospace"
       "wireshark"
-#      "orion"
+      "logseq"
+      "raycast"
+    
     ];
 /*
     masApps =  {

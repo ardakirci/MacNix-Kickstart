@@ -55,6 +55,14 @@
         path = "/Applications/Wireshark.app";
         icon = ./wireshark.icns;
       }
+      {
+        path = "/Applications/Logseq.app";
+        icon = ./logseq.icns;
+      }
+      {
+        path = "/Applications/Raycast.app";
+        icon = ./raycast.icns;      
+      }
     ];
   };
 }
