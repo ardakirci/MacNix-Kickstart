@@ -5,4 +5,13 @@ path+=('/Applications/Emacs.app/Contents/MacOS/')
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-source ~/.p10k.zsh
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -Uz compinit && compinit
+#source ~/.p10k.zsh
+
+# TODO: Delete this function once https://github.com/microsoft/vscode/issues/204085 is fixed
+function code() {
+  path_to_code_executable "$@" 2>/dev/null
+  # using the example above:
+  # /usr/local/bin/code "$@" 2>/dev/null
+}

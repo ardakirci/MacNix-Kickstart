@@ -24,7 +24,6 @@ homebrew = {
       "whatsapp"
       "iterm2@nightly"
       "firefox"
-      "spotify"
       "qbittorrent"
       "coconutbattery"
       "mullvadvpn"
@@ -46,7 +45,13 @@ homebrew = {
       "aerospace"
       "wireshark"
       "logseq"
-      "raycast"
+      "orbstack"
+      "zen-browser"
+      "android-file-transfer"
+      "cursor"
+      "orion"
+      "ghostty"
+      "obsidian"
     
     ];
 /*

@@ -19,16 +19,16 @@
     };
     
     # SFMono w/ patches
-    sf-mono-liga-src = {
-      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
-      flake = false;
-    };
+#    sf-mono-liga-src = {
+#      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+#     flake = false;
+#    };
     
     # icons
-    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+#    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, darwin-custom-icons,... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager,... }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -83,7 +83,7 @@
       system.keyboard = {
         
         enableKeyMapping = true;
-        remapCapsLockToEscape = true;
+        # remapCapsLockToEscape = true;
       };
       # system.keyboard.remapCapsLockToControl = true;
       # Set Git commit hash for darwin-version.
@@ -122,8 +122,8 @@
         ./fonts/sfmononerd.nix
         (import ./overlays)
         
-        darwin-custom-icons.darwinModules.default
-        (import ./icons)
+        #darwin-custom-icons.darwinModules.default
+        #(import ./icons)
       ];
     };
 

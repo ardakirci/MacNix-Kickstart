@@ -10,10 +10,11 @@
       # packages that I manage with home manager is installed through here
       home.packages = with pkgs; [
         zoxide
-#        oh-my-posh
+        oh-my-posh
         lsd
         yazi
-        zsh-powerlevel10k
+#        zsh-powerlevel10k
+#        gitstatus
         #python3
 
         (python3.withPackages (python-pkgs: with python-pkgs; [
@@ -67,23 +68,23 @@
           autosuggestion.enable = true;
           syntaxHighlighting.enable = true;
 
-          plugins = [
-            { name = "powerlevel10k";
-              src = pkgs.zsh-powerlevel10k;
-              file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";}
-          ];
+          #plugins = [
+           # { name = "powerlevel10k";
+            #  src = pkgs.zsh-powerlevel10k;
+             # file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";}
+          #];
 
           initExtra = builtins.readFile ./zshrc;
 
        };
 
         # p10k alternative prompt
-        /*oh-my-posh = {
+        oh-my-posh = {
           enable = true;
 #          useTheme = "atomic";
           enableZshIntegration = true;
           settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./catppuccin.json));
-        };*/
+        };
 
         # terminal file manager
         yazi = {
