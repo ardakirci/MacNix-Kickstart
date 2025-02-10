@@ -107,7 +107,7 @@
  in
   {
     # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#Ardas-MacBook-Pro
+    # $ darwin-rebuild build --flake .$YOUR_MAC
     darwinConfigurations."Ardas-MacBook-Pro" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit inputs; };
       modules = [
@@ -128,6 +128,6 @@
     };
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."Ardas-MacBook-Pro".pkgs;
+    darwinPackages = self.darwinConfigurations."$YOUR_MAC_NAME".pkgs;
   };
 }
