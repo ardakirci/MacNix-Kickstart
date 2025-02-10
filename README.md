@@ -7,5 +7,5 @@ Nix-darwin config for kickstarting a developer-ready mac.
 - Comes with a ready zsh config with sane defaults (at least for me right now)
 - Comes with minimal but effective wezterm configuration
 ### Upcoming
-- [] Add neovim configuration
-- [] Modularize the whole project
+- [ ] Add neovim configuration
+- [ ] Modularize the whole project
