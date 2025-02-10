@@ -99,8 +99,8 @@
 
       # Sudo touchID enable
       security.pam.enableSudoTouchIdAuth = true;
-      users.users."ardak" = {
-        home = "/Users/ardak";
+      users.users."$USER" = {
+        home = "/Users/$USER";
       };
 
     };
